@@ -10,8 +10,6 @@ import Foundation
 open class SVG {
     // YOUR CODE HERE
     var contents: Data
-    var width: UInt
-    var height: UInt
 
     // Initialize the SVG file with commands that will create a
     // width x height canvas
