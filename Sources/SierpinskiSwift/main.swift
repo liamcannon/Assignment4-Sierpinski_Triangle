@@ -11,10 +11,12 @@ import SVGLibrary
 // three more triangles in each of the three corners of the first triangle.
 func sierpinski(p1: Point, p2: Point, p3: Point, level: Int, figure: SVG) {
     if (level <= 0) {return }
+    figure.draw_triangle(p1: p1, p2: p2, p3: p3)
     sierpinski(p1: p1, p2: midpoint(p1, p2), p3: midpoint(p1, p3), level: level - 1, figure: figure)
     sierpinski(p1: p2, p2: midpoint(p1, p2), p3: midpoint(p2, p3), level: level - 1, figure: figure)
     sierpinski(p1: p3, p2: midpoint(p1, p3), p3: midpoint(p2, p3), level: level - 1, figure: figure)
 }
+
 
 // Start the algorithm off using a 300x300 canvas and its largest triangle
 // going across that canvas

@@ -37,6 +37,11 @@ open class SVG {
     public func end_graphic() {
         self.contents.append(contentsOf: Array(String(format: "</svg>\n").utf8))
     }
+    public func draw_triangle(p1: Point, p2: Point, p3: Point) {
+        draw_line(x1: p1.x, y1: p1.y, x2: p2.x, y2: p2.y, color: "black")
+        draw_line(x1: p2.x, y1: p2.y, x2: p3.x, y2: p3.y, color: "black")
+        draw_line(x1: p3.x, y1: p3.y, x2: p1.x, y2: p1.y, color: "black")
+    }
     // Write the SVG file to disk
     public func write(filePath: String) {
         FileManager.default.createFile(atPath: filePath, contents: Data(contents))
